@@ -1,0 +1,14 @@
+navbar.navbar.navbar-expand-lg.navbar-dark.bg-primary.sticky-top
+    a.navbar-brand(href="/") CraftyEngine
+    div.flex-grow-1
+    if (user)
+        img.mr-2.rounded-circle(src=user.avatarURL alt="Avatar" width=32 height=32)
+        div.dropdown
+            a.dropdown-toggle.text-light#user-name(href="#" data-toggle="dropdown" aria-haspopup=true aria-expanded=false)= user.name
+            div.dropdown-menu.dropdown-menu-right(aria-labelledby="user-name")
+                a.dropdown-item(href="/settings") Manage Account
+                div.dropdown-divider
+                a.dropdown-item(href="#" onclick="document.cookie='auth=;max-age=0';location.reload();void 0") Logout
+
+    else
+        button.btn.btn-outline-light(type="button" data-toggle="modal" data-target="#login-modal") Login

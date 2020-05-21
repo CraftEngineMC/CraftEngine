@@ -1,0 +1,24 @@
+extends layout.pug
+
+block css
+    link(rel="stylesheet" href="/assets/css/index.css")
+
+block body
+    if (user)
+        h3.text-center.mt-2 Your servers
+        div.d-flex.justify-content-center.mt-3
+            table.table.table-striped.table-hover#servers
+                thead
+                    tr
+                        th(scope="col") ID
+                        th(scope="col") Name
+                        th(scope="col") Permission
+                tbody
+                    each server in servers
+                        tr#server(onclick=`location="/server/${server.id}"`)
+                            td(scope="col")= server.id
+                            td(scope="col")= server.name
+                            td(scope="col")
+                                span.badge.badge-primary Owner
+    else
+        p.text-center.mt-lg-2 Please log in to use the CraftyEngine panel.

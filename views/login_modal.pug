@@ -1,0 +1,19 @@
+div.modal.fade#login-modal(tabindex=-1 role="dialog" aria-labelledby="login-modal-label" aria-hidden=true)
+    div.modal-dialog
+        form.modal-content.needs-validation#login-form(novalidate=true)
+            div.modal-header
+                h5.modal-title#login-modal-label Login
+                button.close(type="button" data-dismiss="modal" aria-label="Close")
+                    span(aria-hidden=true) &times;
+            div.modal-body
+                div.form-group
+                    label(for="email-input") Email address
+                    input.form-control#email-input(type="email" placeholder="Enter email address..")
+                    div.invalid-feedback#email-feedback
+                div.form-group
+                    label(for="password-input") Password
+                    input.form-control#password-input(type="password" placeholder="Enter password...")
+                    div.invalid-feedback#password-feedback
+            div.modal-footer
+                button.btn.btn-secondary(type="button" data-dismiss="modal") Close
+                button.btn.btn-primary(type="submit") Login

@@ -1,0 +1,7 @@
+#servers {
+    max-width: 50em;
+}
+
+#server {
+    cursor: pointer;
+}
